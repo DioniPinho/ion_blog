@@ -1,0 +1,114 @@
+{
+  "Index": {
+    "title": "Bem-vindo à IonSphere",
+    "description": "Seu parceiro de confiança em soluções DevOps e Cloud"
+  },
+  "Navigation": {
+    "home": "Início",
+    "posts": "Artigos",
+    "categories": "Categorias",
+    "tags": "Tags",
+    "about": "Sobre",
+    "blog": "Blog",
+    "rights": "Todos os direitos reservados."
+  },
+  "Search": {
+    "placeholder": "Pesquisar artigos, tópicos ou tecnologias...",
+    "shortcut": "⌘K",
+    "trending": "Em alta",
+    "trendingTags": [
+      "Kubernetes",
+      "AWS",
+      "CI/CD",
+      "Docker",
+      "Segurança",
+      "DevOps",
+      "Cloud Native"
+    ]
+  },
+  "home": {
+    "hero": {
+      "title": "Explore o Futuro do",
+      "subtitle": "DevOps & Cloud",
+      "description": "Descubra insights inovadores, melhores práticas e as últimas tendências em DevOps, Cloud Computing e infraestrutura moderna."
+    },
+    "featured": {
+      "title": "Destaque",
+      "viewAll": "Ver Todos os Posts",
+      "readMore": "Ler Mais"
+    },
+    "latest": {
+      "title": "Últimos Insights",
+      "description": "Mantenha-se à frente com nossos últimos artigos sobre práticas DevOps, arquitetura em nuvem e automação de infraestrutura.",
+      "tags": ["DevOps", "Cloud", "Kubernetes", "Segurança", "Automação"]
+    },
+    "newsletter": {
+      "title": "Assine Nossa Newsletter",
+      "description": "Receba os últimos insights e atualizações diretamente em seu e-mail.",
+      "placeholder": "Digite seu e-mail",
+      "button": "Assinar",
+      "stats": "Junte-se a mais de 5.000 engenheiros DevOps e arquitetos cloud recebendo nossos insights."
+    }
+  },
+  "post": {
+    "readingTime": "min de leitura",
+    "publishedOn": "Publicado em"
+  },
+  "Admin": {
+    "Login": {
+      "title": "Login Administrativo",
+      "description": "Digite suas credenciais para acessar a área administrativa",
+      "form": {
+        "login": {
+          "label": "Usuário ou Email",
+          "placeholder": "Digite seu usuário ou email"
+        },
+        "password": {
+          "label": "Senha",
+          "placeholder": "Digite sua senha"
+        },
+        "button": {
+          "default": "Entrar",
+          "loading": "Entrando..."
+        }
+      },
+      "success": {
+        "title": "Sucesso",
+        "message": "Login realizado com sucesso"
+      },
+      "error": {
+        "title": "Erro",
+        "message": "Credenciais inválidas"
+      }
+    },
+    "Dashboard": {
+      "title": "Painel",
+      "stats": {
+        "posts": {
+          "title": "Total de Posts",
+          "description": "Posts publicados"
+        },
+        "categories": {
+          "title": "Categorias",
+          "description": "Categorias ativas"
+        },
+        "tags": {
+          "title": "Tags",
+          "description": "Tags ativas"
+        }
+      },
+      "recentPosts": {
+        "title": "Posts Recentes",
+        "description": "Seus posts mais recentes",
+        "empty": "Nenhum post ainda"
+      },
+      "quickActions": {
+        "title": "Ações Rápidas",
+        "description": "Tarefas e ações comuns",
+        "newPost": "Criar Novo Post",
+        "manageCategories": "Gerenciar Categorias",
+        "manageTags": "Gerenciar Tags"
+      }
+    }
+  }
+} 

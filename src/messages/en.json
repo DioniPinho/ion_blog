@@ -1,0 +1,115 @@
+{
+  "Index": {
+    "title": "Welcome to IonSphere",
+    "description": "Your trusted partner in DevOps and Cloud solutions"
+  },
+  "Navigation": {
+    "home": "Home",
+    "posts": "Posts",
+    "categories": "Categories",
+    "tags": "Tags",
+    "about": "About",
+    "blog": "Blog",
+    "rights": "All rights reserved."
+  },
+  "Search": {
+    "placeholder": "Search articles, topics, or technologies...",
+    "shortcut": "⌘K",
+    "trending": "Trending",
+    "trendingTags": [
+      "Kubernetes",
+      "AWS",
+      "CI/CD",
+      "Docker",
+      "Security",
+      "DevOps",
+      "Cloud Native"
+    ]
+  },
+  "home": {
+    "hero": {
+      "title": "Explore the Future of",
+      "subtitle": "DevOps & Cloud",
+      "description": "Discover cutting-edge insights, best practices, and the latest trends in DevOps, Cloud Computing, and modern infrastructure."
+    },
+    "featured": {
+      "title": "Featured Story",
+      "viewAll": "View All Posts",
+      "readMore": "Read More"
+    },
+    "latest": {
+      "title": "Latest Insights",
+      "description": "Stay ahead of the curve with our latest articles on DevOps practices, cloud architecture, and infrastructure automation.",
+      "tags": ["DevOps", "Cloud", "Kubernetes", "Security", "Automation"]
+    },
+    "newsletter": {
+      "title": "Join Our Newsletter",
+      "description": "Get the latest insights and updates delivered straight to your inbox.",
+      "placeholder": "Enter your email",
+      "button": "Subscribe",
+      "stats": "Join 5,000+ DevOps engineers and cloud architects receiving our insights."
+    }
+  },
+  "post": {
+    "readingTime": "min read",
+    "publishedOn": "Published on"
+  },
+  "Admin": {
+    "Login": {
+      "title": "Admin Login",
+      "description": "Enter your credentials to access the admin area",
+      "form": {
+        "login": {
+          "label": "Username or Email",
+          "placeholder": "Enter your username or email"
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "Enter your password"
+        },
+        "button": {
+          "submit": "Login",
+          "loading": "Logging in..."
+        }
+      },
+      "success": {
+        "title": "Success",
+        "message": "Logged in successfully"
+      },
+      "error": {
+        "title": "Error",
+        "message": "Invalid credentials",
+        "auth": "Authentication failed. Please try again."
+      }
+    },
+    "Dashboard": {
+      "title": "Dashboard",
+      "stats": {
+        "posts": {
+          "title": "Total Posts",
+          "description": "Published posts"
+        },
+        "categories": {
+          "title": "Categories",
+          "description": "Active categories"
+        },
+        "tags": {
+          "title": "Tags",
+          "description": "Active tags"
+        }
+      },
+      "recentPosts": {
+        "title": "Recent Posts",
+        "description": "Your most recent blog posts",
+        "empty": "No posts yet"
+      },
+      "quickActions": {
+        "title": "Quick Actions",
+        "description": "Common tasks and actions",
+        "newPost": "Create New Post",
+        "manageCategories": "Manage Categories",
+        "manageTags": "Manage Tags"
+      }
+    }
+  }
+}

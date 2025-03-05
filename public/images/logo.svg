@@ -1,0 +1,113 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definição dos gradientes -->
+  <defs>
+    <linearGradient id="coreGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#6366F1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="glowGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:#60A5FA;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#60A5FA;stop-opacity:0" />
+    </radialGradient>
+
+    <!-- Filtro para o efeito de brilho -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" />
+    </filter>
+  </defs>
+
+  <!-- Efeito de brilho de fundo -->
+  <circle cx="100" cy="100" r="80" fill="url(#glowGradient)" filter="url(#glow)" />
+
+  <!-- Anéis de energia -->
+  <g transform="translate(100 100)">
+    <!-- Anel externo pulsante -->
+    <circle r="60" fill="none" stroke="url(#coreGradient)" stroke-width="2" opacity="0.3">
+      <animate attributeName="r" values="58;62;58" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="stroke-width" values="1;3;1" dur="3s" repeatCount="indefinite" />
+      <animateTransform
+        attributeName="transform"
+        type="rotate"
+        from="0 0 0"
+        to="360 0 0"
+        dur="15s"
+        repeatCount="indefinite"
+      />
+    </circle>
+
+    <!-- Anel de energia dinâmico -->
+    <path d="M-40,0 A40,40 0 1,1 40,0 A40,40 0 1,0 -40,0" fill="none" stroke="url(#coreGradient)" stroke-width="3" stroke-dasharray="20 10" opacity="0.8">
+      <animateTransform
+        attributeName="transform"
+        type="rotate"
+        from="360 0 0"
+        to="0 0 0"
+        dur="10s"
+        repeatCount="indefinite"
+      />
+    </path>
+
+    <!-- Núcleo de energia -->
+    <circle r="25" fill="url(#coreGradient)">
+      <animate
+        attributeName="r"
+        values="23;27;23"
+        dur="2s"
+        repeatCount="indefinite"
+      />
+    </circle>
+
+    <!-- Partículas de energia -->
+    <g>
+      <!-- Partícula 1 -->
+      <circle cx="35" cy="0" r="3">
+        <animate
+          attributeName="fill"
+          values="#3B82F6;#8B5CF6;#3B82F6"
+          dur="2s"
+          repeatCount="indefinite"
+        />
+        <animateTransform
+          attributeName="transform"
+          type="rotate"
+          from="0 0 0"
+          to="360 0 0"
+          dur="4s"
+          repeatCount="indefinite"
+        />
+      </circle>
+
+      <!-- Partícula 2 -->
+      <circle cx="-35" cy="0" r="3">
+        <animate
+          attributeName="fill"
+          values="#8B5CF6;#3B82F6;#8B5CF6"
+          dur="2s"
+          repeatCount="indefinite"
+        />
+        <animateTransform
+          attributeName="transform"
+          type="rotate"
+          from="180 0 0"
+          to="-180 0 0"
+          dur="4s"
+          repeatCount="indefinite"
+        />
+      </circle>
+
+      <!-- Rastro de energia -->
+      <path d="M-20,0 Q0,-30 20,0 Q0,30 -20,0" fill="none" stroke="url(#coreGradient)" stroke-width="2">
+        <animateTransform
+          attributeName="transform"
+          type="rotate"
+          from="0 0 0"
+          to="360 0 0"
+          dur="6s"
+          repeatCount="indefinite"
+        />
+      </path>
+    </g>
+  </g>
+</svg> 
