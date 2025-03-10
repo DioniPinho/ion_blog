@@ -18,7 +18,7 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Loader2 } from 'lucide-react';
 import { toast } from 'react-hot-toast';
-import auth from '@/lib/api/auth';
+import auth from '@/lib/api/supabase-auth';
 
 const loginSchema = z.object({
   username: z.string().min(1, 'Username is required'),

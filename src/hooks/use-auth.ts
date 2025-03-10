@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import { useLocale } from 'next-intl'
-import authApi from '@/lib/api/auth'
+import authApi from '@/lib/api/supabase-auth'
 
 type AuthUser = {
   id: number;
@@ -78,10 +78,10 @@ export function useAuth() {
     }
   }, [pathname, locale, router])
 
-  const login = async (username: string, password: string) => {
+  const login = async (email: string, password: string) => {
     try {
       setIsLoading(true)
-      const response = await authApi.login(username, password)
+      const response = await authApi.login(email, password)
       
       if (response.user) {
         setUser(response.user)

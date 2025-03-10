@@ -5,7 +5,7 @@ import { useParams, useRouter } from 'next/navigation';
 import { PostEditor } from '@/components/blog/PostEditor';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Loader2 } from 'lucide-react';
-import { blogApi, Post } from '@/lib/api/blog';
+import { blogApi, Post } from '@/lib/api/supabase-blog';
 import { toast } from 'react-hot-toast';
 
 export default function EditPostPage() {

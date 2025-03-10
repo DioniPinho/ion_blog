@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { blogApi, Post, Category, Tag } from '@/lib/api/blog';
+import { blogApi, Post, Category, Tag } from '@/lib/api/supabase-blog';
 import { toast } from 'sonner';
 
 interface UsePostsReturn {
@@ -30,7 +30,7 @@ export function usePosts(): UsePostsReturn {
       setLoading(true);
       setError(null);
       const response = await blogApi.getPosts();
-      setPosts(response.data);
+      setPosts(response);
     } catch (err) {
       setError(err as Error);
       toast.error('Failed to fetch posts');
@@ -42,16 +42,15 @@ export function usePosts(): UsePostsReturn {
   const fetchCategories = useCallback(async () => {
     try {
       setLoading(true);
-      console.log('Fetching categories from API');
+      console.log('Fetching categories from Supabase');
       const response = await blogApi.getCategories();
       console.log('Categories response:', response);
       
       if (response && response.data) {
-        // Check if the response has a 'results' property (paginated API)
-        const categoriesData = response.data.results || response.data;
+        const categoriesData = response.data;
         
         if (Array.isArray(categoriesData)) {
-          console.log('Setting categories from API response:', categoriesData);
+          console.log('Setting categories from Supabase response:', categoriesData);
           setCategories(categoriesData);
         } else {
           console.error('Invalid categories data format:', categoriesData);
@@ -75,16 +74,15 @@ export function usePosts(): UsePostsReturn {
   const fetchTags = useCallback(async () => {
     try {
       setLoading(true);
-      console.log('Fetching tags from API');
+      console.log('Fetching tags from Supabase');
       const response = await blogApi.getTags();
       console.log('Tags response:', response);
       
       if (response && response.data) {
-        // Check if the response has a 'results' property (paginated API)
-        const tagsData = response.data.results || response.data;
+        const tagsData = response.data;
         
         if (Array.isArray(tagsData)) {
-          console.log('Setting tags from API response:', tagsData);
+          console.log('Setting tags from Supabase response:', tagsData);
           setTags(tagsData);
         } else {
           console.error('Invalid tags data format:', tagsData);
@@ -167,9 +165,9 @@ export function usePosts(): UsePostsReturn {
       console.log('Creating category with data:', { name, slug });
       const response = await blogApi.createCategory({ name, slug });
       console.log('Category creation response:', response);
-      setCategories((prev) => [...prev, response.data]);
+      setCategories((prev) => [...prev, response]);
       toast.success('Category created successfully');
-      return response.data;
+      return response;
     } catch (err) {
       setError(err as Error);
       console.error('Error creating category:', err);
@@ -187,9 +185,9 @@ export function usePosts(): UsePostsReturn {
       console.log('Creating tag with data:', { name, slug });
       const response = await blogApi.createTag({ name, slug });
       console.log('Tag creation response:', response);
-      setTags((prev) => [...prev, response.data]);
+      setTags((prev) => [...prev, response]);
       toast.success('Tag created successfully');
-      return response.data;
+      return response;
     } catch (err) {
       setError(err as Error);
       console.error('Error creating tag:', err);

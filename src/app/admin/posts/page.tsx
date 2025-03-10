@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { usePosts } from '@/hooks/use-posts';
-import { Post } from '@/lib/api/blog';
+import { Post } from '@/lib/api/supabase-blog';
 import { Button } from '@/components/ui/button';
 import {
   Table,

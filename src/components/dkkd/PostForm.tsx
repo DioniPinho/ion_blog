@@ -28,7 +28,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { MarkdownEditor } from "@/components/dkkd/MarkdownEditor"
 import { FileImage, Tag, X } from 'lucide-react'
 import type { Post, Category, Tag as TagType } from "@/lib/api/blog"
-import { blogApi } from "@/lib/api/blog"
+import { blogApi } from "@/lib/api/supabase-blog"
 import { toast } from "sonner"
 import { cn } from "@/lib/utils"
 

@@ -17,8 +17,8 @@ import { PostForm } from '@/components/dkkd/PostForm'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Separator } from "@/components/ui/separator"
 import { ScrollArea } from "@/components/ui/scroll-area"
-import authApi from '@/lib/api/auth'
-import { blogApi } from '@/lib/api/blog'
+import authApi from '@/lib/api/supabase-auth'
+import { blogApi } from '@/lib/api/supabase-blog'
 import type { Post } from '@/lib/api/blog'
 import { toast } from 'sonner'
 
@@ -40,6 +40,15 @@ export default function DashboardPage() {
   useEffect(() => {
     const loadData = async () => {
       try {
+        // First check if user is authenticated
+        const isAuth = await authApi.isAuthenticated()
+        if (!isAuth) {
+          // Redirect to login if not authenticated
+          window.location.href = '/dkkd/login?from=/dkkd/dashboard'
+          return
+        }
+        
+        // Only load data if authenticated
         const [userData, postsData] = await Promise.all([
           authApi.getMe(),
           blogApi.getPosts()
@@ -49,6 +58,13 @@ export default function DashboardPage() {
       } catch (error) {
         console.error('Failed to load data:', error)
         toast.error('Failed to load data')
+        
+        // If we get an auth error, redirect to login
+        if (error instanceof Error && 
+            (error.message.includes('Auth session missing') || 
+             error.message.includes('Not authenticated'))) {
+          window.location.href = '/dkkd/login?from=/dkkd/dashboard'
+        }
       } finally {
         setIsLoading(false)
       }

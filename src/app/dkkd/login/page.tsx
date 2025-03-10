@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { toast } from 'sonner'
-import auth from '@/lib/api/auth'
+import auth from '@/lib/api/supabase-auth'
 
 export default function LoginPage() {
   const router = useRouter()
@@ -18,12 +18,12 @@ export default function LoginPage() {
     setIsLoading(true)
 
     const formData = new FormData(event.currentTarget)
-    const username = formData.get('username') as string
+    const email = formData.get('email') as string
     const password = formData.get('password') as string
 
     try {
       console.log('Starting login process...')
-      const response = await auth.login(username, password)
+      const response = await auth.login(email, password)
       console.log('Login successful')
       
       // Redirect to dashboard after successful login
@@ -53,14 +53,14 @@ export default function LoginPage() {
           <CardContent>
             <div className="grid w-full items-center gap-4">
               <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="username">Username</Label>
+                <Label htmlFor="email">Email</Label>
                 <Input
-                  id="username"
-                  name="username"
-                  type="text"
-                  placeholder="Enter your username"
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="Enter your email"
                   required
-                  autoComplete="username"
+                  autoComplete="email"
                 />
               </div>
               <div className="flex flex-col space-y-1.5">

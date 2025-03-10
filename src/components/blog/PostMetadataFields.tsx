@@ -4,7 +4,7 @@ import { FormField, FormItem, FormLabel, FormControl, FormMessage } from '@/comp
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { X, Loader2 } from 'lucide-react';
-import { Category, Tag } from '@/lib/api/blog';
+import { Category, Tag } from '@/lib/api/supabase-blog';
 import { usePosts } from '@/hooks/use-posts';
 
 interface PostFormValues {
@@ -445,4 +445,4 @@ export function PostMetadataFields({
       />
     </div>
   );
-} 
+}
